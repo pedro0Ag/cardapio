@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio da Sua Lanchonete</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Nome da Sua Lanchonete</h1>
+        <p>O melhor sabor da cidade, agora na palma da sua mão!</p>
+    </header>
+
+    <main>
+        <section id="hamburgueres" class="menu-category">
+            <h2>Hambúrgueres</h2>
+
+            <div class="menu-item" data-name="X-Bacon Supremo" data-ingredients="Pão brioche selado na manteiga, hambúrguer artesanal de 180g, queijo cheddar cremoso, fatias generosas de bacon crocante, alface americana, tomate fresco e nossa maionese especial da casa.">
+                <img src="img/hb1.png" alt="Foto do X-Bacon Supremo">
+                <div class="item-details">
+                    <h3>X-Bacon Supremo</h3>
+                    <p class="description">Uma explosão de sabor com o bacon mais crocante que você já viu.</p>
+                    <p class="price">R$ 28,50</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Duplo Cheddar Melt" data-ingredients="Pão australiano, dois hambúrgueres de 150g cada, banho de queijo cheddar derretido, cebola caramelizada no shoyu e picles agridoce.">
+                <img src="img/hb1.png" alt="Foto do Duplo Cheddar Melt">
+                <div class="item-details">
+                    <h3>Duplo Cheddar Melt</h3>
+                    <p class="description">Para os verdadeiros amantes de queijo. Impossível resistir.</p>
+                    <p class="price">R$ 32,00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="porcoes" class="menu-category">
+            <h2>Porções</h2>
+            
+            <div class="menu-item" data-name="Batata Frita com Cheddar e Bacon" data-ingredients="Porção generosa de batatas fritas sequinhas, cobertas com cheddar cremoso e cubos de bacon crocante. Serve 2 pessoas.">
+                <img src="img/hb1.png" alt="Foto da Batata Frita">
+                <div class="item-details">
+                    <h3>Batata Frita com Cheddar e Bacon</h3>
+                    <p class="description">A companheira perfeita para qualquer hambúrguer.</p>
+                    <p class="price">R$ 22,00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="bebidas" class="menu-category">
+            <h2>Bebidas</h2>
+
+            <div class="menu-item" data-name="Refrigerante Lata" data-ingredients="Escolha entre Coca-Cola, Guaraná Antarctica, Fanta Laranja ou Sprite. (350ml)">
+                <img src="img/hb1.png" alt="Foto de Refrigerante">
+                <div class="item-details">
+                    <h3>Refrigerante Lata</h3>
+                    <p class="description">Geladinho para refrescar.</p>
+                    <p class="price">R$ 6,00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <div id="chat-button">
+        <img src="https://img.icons8.com/plasticine/100/chat.png" alt="Chat Icon"/>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nome da Sua Lanchonete. Todos os direitos reservados.</p>
+    </footer>
+
+     <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modal-img" src="" alt="Foto do produto">
+            <h2 id="modal-name"></h2>
+            <h3>Ingredientes:</h3>
+            <p id="modal-ingredients"></p>
+        </div>
+    </div>
+
+    <div id="chat-container" class="hidden">
+        <div id="chat-header">
+            <span>Tira-dúvidas (IA)</span>
+            <span id="close-chat">&times;</span>
+        </div>
+        <div id="chat-messages">
+            <div class="chat-message bot">Olá! Como posso ajudar? Pergunte sobre ingredientes ou alergias.</div>
+        </div>
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="O pão contém glúten?">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
