@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio da Sua Lanchonete</title>
+    <title>Cardápio - DinDin Jão 10</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,93 +12,159 @@
 <body>
 
     <header>
-        <h1>Nome da Sua Lanchonete</h1>
+        <h1>DinDin Jão 10</h1>
         <p>O melhor sabor da cidade, agora na palma da sua mão!</p>
     </header>
 
+    <div id="sticky-nav-search">
+        <nav class="top-nav">
+            <a href="#Populares">Populares</a>
+            <a href="#Dindins">Dindins</a>
+            <a href="#encomendas">Encomendas</a>
+            <a href="#Trufas">Trufas</a>
+        </nav>
+
+        <div class="pesquisa">
+             <div id="search-container">
+                <input type="text" id="search-input" placeholder="Busque seu sabor favorito...">
+             </div>
+        </div>
+    </div>
+
     <main>
-        <section id="hamburgueres" class="menu-category">
-            <h2>Hambúrgueres</h2>
-
-            <div class="menu-item" data-name="X-Bacon Supremo" data-ingredients="Pão brioche selado na manteiga, hambúrguer artesanal de 180g, queijo cheddar cremoso, fatias generosas de bacon crocante, alface americana, tomate fresco e nossa maionese especial da casa.">
-                <img src="img/hb1.png" alt="Foto do X-Bacon Supremo">
+        <section id="Populares" class="menu-category">
+            <h2>Mais Pedidos</h2>
+            <div class="menu-item" data-name="Ninho com Nutella" data-ingredients="Leite em pó Ninho, leite condensado, creme de leite e o autêntico creme de avelã Nutella.">
+                <img src="img/din.webp" alt="Foto do Dindin de Ninho com Nutella">
                 <div class="item-details">
-                    <h3>X-Bacon Supremo</h3>
-                    <p class="description">Uma explosão de sabor com o bacon mais crocante que você já viu.</p>
-                    <p class="price">R$ 28,50</p>
+                    <h3>Ninho com Nutella</h3>
+                    <p class="description">A combinação perfeita que todo mundo ama. Cremoso e inesquecível!</p>
+                    <p class="price">R$ 5,00</p>
                 </div>
             </div>
-
-            <div class="menu-item" data-name="Duplo Cheddar Melt" data-ingredients="Pão australiano, dois hambúrgueres de 150g cada, banho de queijo cheddar derretido, cebola caramelizada no shoyu e picles agridoce.">
-                <img src="img/hb1.png" alt="Foto do Duplo Cheddar Melt">
+            <div class="menu-item" data-name="Mousse de Maracujá" data-ingredients="Polpa de maracujá natural, leite condensado e creme de leite.">
+                <img src="img/din.webp" alt="Foto do Dindin de Mousse de Maracujá">
                 <div class="item-details">
-                    <h3>Duplo Cheddar Melt</h3>
-                    <p class="description">Para os verdadeiros amantes de queijo. Impossível resistir.</p>
-                    <p class="price">R$ 32,00</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="porcoes" class="menu-category">
-            <h2>Porções</h2>
-            
-            <div class="menu-item" data-name="Batata Frita com Cheddar e Bacon" data-ingredients="Porção generosa de batatas fritas sequinhas, cobertas com cheddar cremoso e cubos de bacon crocante. Serve 2 pessoas.">
-                <img src="img/hb1.png" alt="Foto da Batata Frita">
-                <div class="item-details">
-                    <h3>Batata Frita com Cheddar e Bacon</h3>
-                    <p class="description">A companheira perfeita para qualquer hambúrguer.</p>
-                    <p class="price">R$ 22,00</p>
+                    <h3>Mousse de Maracujá</h3>
+                    <p class="description">O azedinho do maracujá com a doçura do mousse. Refrescante e cremoso.</p>
+                    <p class="price">R$ 4,50</p>
                 </div>
             </div>
         </section>
 
-        <section id="bebidas" class="menu-category">
-            <h2>Bebidas</h2>
+        <section id="Dindins" class="menu-category">
+            <h2>Nossos Dindins</h2>
+            <div class="menu-item" data-name="Ninho com Nutella" data-ingredients="Leite em pó Ninho, leite condensado, creme de leite e o autêntico creme de avelã Nutella.">
+                <img src="img/din.webp" alt="Foto do Dindin de Ninho com Nutella">
+                <div class="item-details">
+                    <h3>Ninho com Nutella</h3>
+                    <p class="description">A combinação perfeita que todo mundo ama. Cremoso e inesquecível!</p>
+                    <p class="price">R$ 5,00</p>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Oreo" data-ingredients="Leite, leite condensado e pedaços do biscoito Oreo original.">
+                <img src="img/din.webp" alt="Foto do Dindin de Oreo">
+                <div class="item-details">
+                    <h3>Oreo</h3>
+                    <p class="description">Cremoso e com pedacinhos crocantes do biscoito mais famoso do mundo.</p>
+                    <p class="price">R$ 5,00</p>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Mousse de Maracujá" data-ingredients="Polpa de maracujá natural, leite condensado e creme de leite.">
+                <img src="img/din.webp" alt="Foto do Dindin de Mousse de Maracujá">
+                <div class="item-details">
+                    <h3>Mousse de Maracujá</h3>
+                    <p class="description">O azedinho do maracujá com a doçura do mousse. Refrescante e cremoso.</p>
+                    <p class="price">R$ 4,50</p>
+                </div>
+            </div>
+             <div class="menu-item" data-name="Paçoca" data-ingredients="Leite, leite condensado e paçoca de amendoim.">
+                <img src="img/din.webp" alt="Foto do Dindin de Paçoca">
+                <div class="item-details">
+                    <h3>Paçoca</h3>
+                    <p class="description">O sabor inconfundível do doce de amendoim que é a cara do Brasil.</p>
+                    <p class="price">R$ 4,50</p>
+                </div>
+            </div>
+             <div class="menu-item" data-name="Coco Cremoso" data-ingredients="Leite de coco, coco fresco ralado e leite condensado.">
+                <img src="img/din.webp" alt="Foto do Dindin de Coco">
+                <div class="item-details">
+                    <h3>Coco Cremoso</h3>
+                    <p class="description">Um clássico que nunca erra. Feito com coco de verdade!</p>
+                    <p class="price">R$ 4,00</p>
+                </div>
+            </div>
+        </section>
 
+        <section id="encomendas" class="menu-category">
+            <h2>Kits para Encomenda</h2>
+            <div class="menu-item" data-name="Kit Festa (10 Dindins)" data-ingredients="Válido para todos os sabores disponíveis no cardápio, sujeito à disponibilidade. Entre em contato para agendar seu pedido.">
+                <img src="img/din.webp" alt="Foto do Kit Festa">
+                <div class="item-details">
+                    <h3>Kit Festa (10 Dindins)</h3>
+                    <p class="description">Leve nossos melhores sabores para sua festa! Escolha 10 dindins do cardápio e pague um preço especial.</p>
+                    <p class="price">R$ 45,00</p>
+                </div>
+            </div>
+             <div class="menu-item" data-name="Kit Família (20 Dindins)" data-ingredients="Válido para todos os sabores disponíveis no cardápio, sujeito à disponibilidade. Ideal para eventos maiores. Entre em contato para agendar seu pedido.">
+                <img src="img/din.webp" alt="Foto do Kit Família">
+                <div class="item-details">
+                    <h3>Kit Família (20 Dindins)</h3>
+                    <p class="description">Garanta a sobremesa para toda a galera! Escolha 20 dindins e aproveite um desconto ainda maior.</p>
+                    <p class="price">R$ 85,00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Trufas" class="menu-category">
+            <h2>Trufas</h2>
             <div class="menu-item" data-name="Refrigerante Lata" data-ingredients="Escolha entre Coca-Cola, Guaraná Antarctica, Fanta Laranja ou Sprite. (350ml)">
-                <img src="img/hb1.png" alt="Foto de Refrigerante">
+                <img src="img/din.webp" alt="Foto de Refrigerante">
                 <div class="item-details">
-                    <h3>Refrigerante Lata</h3>
-                    <p class="description">Geladinho para refrescar.</p>
+                    <h3>Trufa de chocolate</h3>
+                    <p class="description">Para deixar seu dia mais alegre</p>
                     <p class="price">R$ 6,00</p>
                 </div>
             </div>
         </section>
+        
+        <p id="no-results-message" style="display: none; text-align: center; font-size: 1.2rem; margin-top: 2rem;">Nenhum item encontrado com esse termo.</p>
+
     </main>
 
+    
      <div id="chat-button">
-        <img src="https://img.icons8.com/plasticine/100/chat.png" alt="Chat Icon"/>
-    </div>
+         <img src="https://img.icons8.com/plasticine/100/chat.png" alt="Chat Icon"/>
+     </div>
 
     <footer>
-        <p>&copy; 2025 Nome da Sua Lanchonete. Todos os direitos reservados.</p>
+        <p>&copy; 2025 DinDin Jão 10. Todos os direitos reservados.</p>
     </footer>
 
      <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <img id="modal-img" src="" alt="Foto do produto">
-            <h2 id="modal-name"></h2>
-            <h3>Ingredientes:</h3>
-            <p id="modal-ingredients"></p>
-        </div>
-    </div>
+         <div class="modal-content">
+             <span class="close-button">&times;</span>
+             <img id="modal-img" src="" alt="Foto do produto">
+             <h2 id="modal-name"></h2>
+             <h3>Ingredientes:</h3>
+             <p id="modal-ingredients"></p>
+         </div>
+     </div>
 
-    <div id="chat-container" class="hidden">
-        <div id="chat-header">
-            <span>Tira-dúvidas (IA)</span>
-            <span id="close-chat">&times;</span>
-        </div>
-        <div id="chat-messages">
-            <div class="chat-message bot">Olá! Como posso ajudar? Pergunte sobre ingredientes ou alergias.</div>
-        </div>
-        <div id="chat-input-container">
-            <input type="text" id="chat-input" placeholder="O pão contém glúten?">
-            <button id="send-button">Enviar</button>
-        </div>
-    </div>
+     <div id="chat-container" class="hidden">
+         <div id="chat-header">
+             <span>Tira-dúvidas (IA)</span>
+             <span id="close-chat">&times;</span>
+         </div>
+         <div id="chat-messages">
+             <div class="chat-message bot">Olá! Como posso ajudar? Pergunte sobre nossos sabores, ingredientes ou alergias.</div>
+         </div>
+         <div id="chat-input-container">
+             <input type="text" id="chat-input" placeholder="O dindin de Oreo tem glúten?">
+             <button id="send-button">Enviar</button>
+         </div>
+     </div>
 
-    <script src="index.js"></script>
-    
+     <script src="index.js"></script>
 </body>
 </html>

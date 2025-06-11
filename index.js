@@ -41,6 +41,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+const searchInput = document.getElementById('search-input');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const menuCategories = document.querySelectorAll('.menu-category');
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        let itemsFound = 0;
+
+        // 1. Filtra os itens individualmente
+        menuItems.forEach(item => {
+            const name = item.dataset.name.toLowerCase();
+            const ingredients = item.dataset.ingredients.toLowerCase();
+            const description = item.querySelector('.description').textContent.toLowerCase();
+            
+            const isVisible = name.includes(searchTerm) || 
+                                ingredients.includes(searchTerm) || 
+                                description.includes(searchTerm);
+            
+            if (isVisible) {
+                item.style.display = 'flex'; // ou o display original do item
+                itemsFound++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // 2. Esconde os títulos das categorias que ficaram vazias
+        menuCategories.forEach(category => {
+            const visibleItemsInCategory = category.querySelectorAll('.menu-item[style*="display: flex"]');
+            
+            if (visibleItemsInCategory.length > 0) {
+                category.style.display = 'block'; // Mostra a categoria
+            } else {
+                category.style.display = 'none'; // Esconde a categoria
+            }
+        });
+        
+        // 3. Mostra ou esconde a mensagem de "nenhum resultado"
+        if (itemsFound === 0) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+
+    });
+
 /* ======================================= */
 /* LÓGICA DO CHAT DE INTELIGÊNCIA ARTIFICIAL */
 /* ======================================= */
@@ -98,44 +145,57 @@ function addMessage(text, type) {
 
 // ==========================================================
 // AQUI FICA A "INTELIGÊNCIA" DO NOSSO BOT.
-// Personalize as respostas aqui!
+// Respostas personalizadas para o cardápio de Dindins.
 // ==========================================================
 function getAIResponse(question) {
-    // Alergia a glúten / ingredientes do pão
-    if (question.includes('pão') || question.includes('glúten') || question.includes('trigo')) {
-        return 'Nosso pão brioche contém farinha de trigo (glúten), ovos e leite. Se você tem alergia a glúten, infelizmente nossos lanches atuais não são recomendados.';
+    // Alergia a glúten / trigo
+    if (question.includes('glúten') || question.includes('trigo') || (question.includes('oreo') && question.includes('glúten'))) {
+        return 'Ótima pergunta! A grande maioria dos nossos dindins não contém glúten. A única exceção é o sabor Oreo, pois o biscoito é feito com farinha de trigo. Os outros sabores são seguros para quem tem restrição ao glúten.';
     }
 
-    // Alergia a lactose / queijo / leite
-    if (question.includes('queijo') || question.includes('leite') || question.includes('lactose')) {
-        return 'Sim, nossos queijos (cheddar e mussarela) são feitos de leite de vaca e contêm lactose. O pão brioche também contém leite.';
-    }
-
-    // Sobre o bacon
-    if (question.includes('bacon')) {
-        return 'Nosso bacon é de origem suína, preparado na chapa para ficar bem crocante!';
-    }
-
-    // Sobre o ovo
-    if (question.includes('ovos')) {
-        return 'nenhum ingrediente que vai no hamburguer contem ovos, a não ser os hambugueres que tem ovo dentre seus ingregientes';
+    // Alergia a lactose / leite
+    if (question.includes('leite') || question.includes('lactose') || question.includes('derivados')) {
+        return 'Sim, a maioria dos nossos dindins cremosos (como Ninho com Nutella, Oreo, Paçoca, Coco e Mousse de Maracujá) são feitos com leite e/ou leite condensado, portanto contêm lactose. No momento não temos opções à base de água, mas estamos planejando lançar em breve!';
     }
     
-    // Opções vegetarianas/veganas
-    if (question.includes('vegano') || question.includes('vegetariano')) {
-        return 'No momento, estamos desenvolvendo opções vegetarianas. Por enquanto, todos os nossos hambúrgueres são de carne bovina. A porção de batata frita sem bacon é uma ótima opção vegetariana!';
+    // Sobre o Ninho com Nutella
+    if (question.includes('ninho') || question.includes('nutella')) {
+        return 'O nosso Dindin de Ninho com Nutella é o campeão de vendas! Usamos Leite Ninho original, leite condensado e recheamos com a autêntica Nutella. É pura cremosidade!';
+    }
+
+    // Sobre o amendoim / paçoca
+    if (question.includes('amendoim') || question.includes('paçoca')) {
+        return 'Sim, nosso dindin de Paçoca contém amendoim em sua composição. Se você tem alergia a amendoim, recomendamos evitar este sabor.';
+    }
+
+    // Opções de fruta
+    if (question.includes('fruta')) {
+        return 'Nosso sabor Mousse de Maracujá é feito com a polpa natural da fruta, trazendo aquele equilíbrio perfeito entre o doce e o azedinho. É uma ótima pedida refrescante!';
+    }
+
+    // Sobre as encomendas / kits
+    if (question.includes('kit') || question.includes('encomenda') || question.includes('festa')) {
+        return 'Temos kits especiais para sua festa ou evento! O Kit Festa vem com 10 dindins por R$ 45,00 e o Kit Família com 20 dindins por R$ 85,00. Você pode escolher os sabores que preferir (sujeito à disponibilidade). Recomendamos encomendar com antecedência!';
     }
     
     // Horário de funcionamento
     if (question.includes('horário') || question.includes('aberto') || question.includes('fecha')) {
         return 'Funcionamos de terça a domingo, das 18h às 23h.';
     }
+
+    if (question.includes('senha')|| question.includes('wi-fi')) {
+        return 'A senha do wi-fi e visitantes e : dindinjao10';
+    }
+
+    if (question.includes('trufa')) {
+        return 'Nossa trufa e recheada com chocolate ao lite ';
+    }
     
     // Pergunta genérica sobre alergia
     if (question.includes('alergia') || question.includes('alérgico')) {
-        return 'Por favor, me diga qual é a sua alergia para que eu possa verificar nos nossos ingredientes. Os alérgenos mais comuns em nossa cozinha são: glúten, leite, ovos e soja.';
+        return 'Para sua segurança, por favor, me diga qual é a sua alergia para que eu possa ajudar. Nossos principais alérgenos são: LACTOSE (na maioria dos sabores), GLÚTEN (no sabor Oreo) e AMENDOIM (no sabor Paçoca).';
     }
 
     // Se não entender a pergunta
-    return 'Desculpe, não entendi sua pergunta. Você pode tentar perguntar de outra forma? Sou especialista em ingredientes e alergias.';
+    return 'Desculpe, não entendi sua pergunta. Sou um assistente virtual e posso responder sobre nossos sabores de dindin, ingredientes, preços, kits e alergias. Como posso te ajudar?';
 }

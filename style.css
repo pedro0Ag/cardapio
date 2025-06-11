@@ -8,7 +8,7 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #d32f2f; /* Vermelho escuro */
+    background-color: #619cd3; /* Azul customizado */
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -36,7 +36,7 @@ main {
 .menu-category h2 {
     font-family: 'Lobster', cursive;
     font-size: 2rem;
-    color: #d32f2f;
+    color: #619cd3;
     border-bottom: 3px solid #ffc107; /* Amarelo mostarda */
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
@@ -186,7 +186,7 @@ footer {
     right: 20px;
     cursor: pointer;
     z-index: 998;
-    background-color: #d32f2f;
+    background-color: #619cd3;
     border-radius: 50%;
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -221,7 +221,7 @@ footer {
 }
 
 #chat-header {
-    background-color: #d32f2f;
+    background-color: #619cd3;
     color: white;
     padding: 10px 15px;
     font-weight: bold;
@@ -280,7 +280,7 @@ footer {
 }
 
 #send-button {
-    background-color: #d32f2f;
+    background-color: #619cd3;
     color: white;
     border: none;
     border-radius: 50%;
@@ -289,4 +289,75 @@ footer {
     margin-left: 10px;
     cursor: pointer;
     font-weight: bold;
+}
+
+/* Rolagem suave ao clicar nos links de navegação */
+html {
+    scroll-behavior: smooth;
+    /* Adiciona um espaçamento no topo para a navegação fixa não cobrir o título da seção */
+    scroll-padding-top: 130px; 
+}
+
+/* Container fixo para navegação e busca */
+#sticky-nav-search {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background-color: #f4f4f4;
+    padding-top: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos da barra de navegação */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+    padding: 0.5rem 1rem;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+.top-nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    border: 1px solid #ddd;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.top-nav a:hover {
+    background-color: #619cd3;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Estilos da barra de busca */
+#search-container {
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    justify-content: center;   
+}
+
+#search-input {
+    text-align: center;
+    width: 45%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+   /* Garante que o padding não aumente a largura total */
+}
+
+.pesquisa{
+    width: 100%;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #619cd3;
+    box-shadow: 0 0 5px rgba(47, 104, 211, 0.5);
 }
